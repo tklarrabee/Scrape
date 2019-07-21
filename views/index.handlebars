@@ -2,12 +2,18 @@
     <a class="navbar-brand" href="#">Navbar</a>
 </nav>
 
-<div class="container-fluid">
-    
+<div class="container">
+
+    {{!-- <div class="row"> --}}
+        {{#each article}}
+        {{> scrape-block}}
+        {{/each}}
+    {{!-- </div> --}}
+
 </div>
 
 <footer class="footer bg-dark">
-<div class="container">
-    <p>Tyler's Scraper</p>
-</div>
+    <div class="container">
+        <p>Tyler's Scraper</p>
+    </div>
 </footer>
