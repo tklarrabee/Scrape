@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGOLAB_URI || "mongodb://localhost/mongoHeadlines";
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 app.use(express.static(path.join(__dirname, 'models')));
