@@ -19,7 +19,10 @@ const app = express();
 
 const MONGODB_URI = process.env.MONGOLAB_URI || "mongodb://localhost/mongoHeadlines";
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err, res) => {
+  if(err) console.log('ERROR connecting to: ' + MONGODB_URI + '. ' + err)
+  else console.log('Succeded connected to: ' + MONGODB_URI)
+});
 app.use(express.static(path.join(__dirname, 'models')));
 
 
