@@ -60,9 +60,9 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-app.listen(PORT, () => {
-  console.log("App running on port " + PORT + "!");
-});
+// app.listen(PORT, () => {
+//   console.log("App running on port " + PORT + "!");
+// });
 
 
 module.exports = app;
