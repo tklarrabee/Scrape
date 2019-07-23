@@ -11,13 +11,13 @@ const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 const scrapeRouter = require('./routes/scrape');
 
-const db = require("./models");
+// const db = require('./models');
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/mongoHeadlines';
 
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err, res) => {
   if(err) console.log('ERROR connecting to: ' + MONGODB_URI + '. ' + err)
@@ -27,11 +27,11 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err, res) => {
 
 
 // view engine setup
-const exphbs = require("express-handlebars");
+const exphbs = require('express-handlebars');
 app.set('views', path.join(__dirname, 'views'));
 
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 app.use(logger('dev'));
@@ -58,11 +58,5 @@ app.use((err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error');
 });
-
-// Start the server
-// app.listen(PORT, () => {
-//   console.log("App running on port " + PORT + "!");
-// });
-
 
 module.exports = app;

@@ -1,8 +1,8 @@
-var express = require('express');
+const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
-var router = express.Router();
-var db = require("../models");
+const router = express.Router();
+const db = require("../models");
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
   });
 });
 
-router.post("/", (req, res) => {
+router.delete("/", (req, res) => {
   db.Article.drop()
 })
 
