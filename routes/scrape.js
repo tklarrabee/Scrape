@@ -1,8 +1,8 @@
 var express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
-var db = require("../models");
 var router = express.Router();
+var db = require("../models");
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {

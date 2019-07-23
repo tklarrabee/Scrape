@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 
-const axios = require('axios');
-const cheerio = require('cheerio');
+// const axios = require('axios');
+// const cheerio = require('cheerio');
 
 const indexRouter = require('./routes/index');
 const scrapeRouter = require('./routes/scrape');
@@ -23,7 +23,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, (err, res) => {
   if(err) console.log('ERROR connecting to: ' + MONGODB_URI + '. ' + err)
   else console.log('Succeded connected to: ' + MONGODB_URI)
 });
-app.use(express.static(path.join(__dirname, 'models')));
+// app.use(express.static(path.join(__dirname, 'models')));
 
 
 // view engine setup
